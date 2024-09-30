@@ -1,4 +1,4 @@
-package week1.src;
+package week1;
 
 import java.util.Scanner;
 
@@ -8,7 +8,8 @@ public class Week1 {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    System.out.print("Enter distance (km): ");
+
+    System.out.print("\nEnter distance (km): ");
     int distance = scanner.nextInt();
 
     System.out.print("Enter weight (kg): ");
