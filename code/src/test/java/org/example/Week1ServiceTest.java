@@ -1,5 +1,6 @@
 package org.example;
 
+import constant.TestConstant;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,13 +11,8 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Week1ServiceTest {
-
-    public static int INVALID_RESULT = -1;
-    public static String INVALID_INPUT = "Invalid input.";
-    public static String OVERLOAD = "Overload.";
-
-    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-    private PrintStream originalOut;
+    public final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+    public PrintStream originalOut;
 
     @BeforeEach
     public void setUp() {
@@ -123,96 +119,96 @@ class Week1ServiceTest {
     public void testCalculateShippingCost_InvalidInput1() {
         int weight = -1;
         int distance = -1;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(INVALID_INPUT, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.INVALID_INPUT, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testCalculateShippingCost_InvalidInput2() {
         int weight = 5;
         int distance = -1;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(INVALID_INPUT, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.INVALID_INPUT, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testCalculateShippingCost_InvalidInput3() {
         int weight = 15;
         int distance = -1;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(INVALID_INPUT, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.INVALID_INPUT, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testCalculateShippingCost_InvalidInput4() {
         int weight = -1;
         int distance = 5;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(INVALID_INPUT, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.INVALID_INPUT, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testCalculateShippingCost_InvalidInput5() {
         int weight = -1;
         int distance = 150;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(INVALID_INPUT, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.INVALID_INPUT, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testCalculateShippingCost_Overload1() {
         int weight = 5;
         int distance = 150;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(OVERLOAD, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.OVERLOAD, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testCalculateShippingCost_Overload2() {
         int weight = 15;
         int distance = 50;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(OVERLOAD, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.OVERLOAD, outputStreamCaptor.toString().trim());
     }
 
     @Test
     public void testCalculateShippingCost_Overload3() {
         int weight = 15;
         int distance = 150;
-        long expectedCost = INVALID_RESULT;
+        long expectedCost = TestConstant.INVALID_RESULT;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
 
-        assertEquals(OVERLOAD, outputStreamCaptor.toString().trim());
+        assertEquals(TestConstant.OVERLOAD, outputStreamCaptor.toString().trim());
     }
 
     @Test
