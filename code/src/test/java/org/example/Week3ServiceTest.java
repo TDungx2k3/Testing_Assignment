@@ -73,14 +73,12 @@ class Week3ServiceTest {
 
     @Test
     public void testCalculateShippingCost_DataPath5() {
-        int weight = 50;
-        int distance = 10;
-        long expectedCost = TestConstant.INVALID_RESULT;
+        int weight = 8;
+        int distance = 40;
+        long expectedCost = 128000;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
-
-        assertEquals(TestConstant.OVERLOAD, outputStreamCaptor.toString().trim());
     }
 
     @Test
@@ -131,14 +129,12 @@ class Week3ServiceTest {
 
     @Test
     public void testCalculateShippingCost_DataPath10() {
-        int weight = 5;
-        int distance = 500;
-        long expectedCost = TestConstant.INVALID_RESULT;
+        int weight = 4;
+        int distance = 80;
+        long expectedCost = 160000;
 
         long actualCost = Week1Service.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, actualCost);
-
-        assertEquals(TestConstant.OVERLOAD, outputStreamCaptor.toString().trim());
     }
 
 }
